@@ -1,6 +1,7 @@
 import './App.css'
-import { BrowserRouter, createBrowserRouter, Outlet, Route, RouterProvider, Routes } from "react-router-dom";
+import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { NavBar } from './components/NavBar';
+import { HomePage } from './pages/HomePage';
 
 function App() {
   
@@ -10,7 +11,7 @@ function App() {
       errorElement : <p>Erreur de chargement...</p>,
       children: [
         {path : "", element: <h1>Page d'accueil</h1> },
-        {path : "/produits", element: <h1>Mes produits</h1> },
+        {path : "/produits", element: <HomePage/> },
       ],
     },
   ]);
@@ -26,16 +27,4 @@ function App() {
   return <RouterProvider router={router} />;
 }
 
-
-
 export default App
-
-/* return (
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route path="" element={<h1>Page d'accueil</h1>}></Route>
-          <Route path="/produits" element={<h1>Mes produits</h1>} />
-        </Routes>
-      </BrowserRouter>
-  ) */

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useProducts } from "../hooks/useProducts";
 import { MyTable } from "../components/MyTable";
+import { ProductsListWithPaginationButtons } from "../components/ProductsListWithPaginationButtons";
 
 export const ProductPage = () => {
     const {getPaginate, products, loading, error} = useProducts();
@@ -53,6 +54,7 @@ export const ProductPage = () => {
 
         <section className="border-t mt-5">
             <h2>Exemple n°2</h2>
+            <ProductsListWithPaginationButtons/>
         </section>
     </>
   );

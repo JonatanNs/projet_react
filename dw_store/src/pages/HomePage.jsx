@@ -4,7 +4,6 @@ import { useProducts } from "../hooks/useProducts";
 import { Skeleton } from "../components/Skeleton";
 
 export const HomePage = () => {
-  // const [products, setProducts] = useState([]);
 
   const { getProducts, products, error, loading } = useProducts();
 
@@ -13,22 +12,6 @@ export const HomePage = () => {
   }, []);
 
   const loadProducts = () => {
-    // SANS LE HOOK PERSO
-    // axios
-    //   .get("http://localhost:3001/products")
-    //   .then((resp) => {
-    //     console.log(resp.data);
-    //     setProducts(resp.data);
-    //   })
-    //   .catch((err) => console.error("Une erreur est survenue", err));
-
-    // getProducts()
-    //   .then((resp) => {
-    //     console.log(resp.data);
-    //     setProducts(resp.data);
-    //   })
-    //   .catch((err) => console.error("Une erreur est survenue", err));
-
     getProducts(); // SI on déplace le useState dans le hook
   };
 
@@ -47,7 +30,7 @@ export const HomePage = () => {
             products.map((p) => <ProductCard product={p} key={p.id} />)
           )
         ) : (
-          [...Array(16).keys()].map(() => <Skeleton />)
+          [...Array(16).keys()].map((_, idx) => <Skeleton key={idx}/>)
         )}
       </div>
     </>

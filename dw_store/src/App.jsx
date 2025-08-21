@@ -3,6 +3,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import { NavBar } from './components/NavBar';
 import { HomePage } from './pages/HomePage';
 import { ProductDetails } from './pages/ProductDetails';
+import { ProductPage } from './pages/ProductPage';
 
 function App() {
   
@@ -13,7 +14,7 @@ function App() {
       children: [
         // Afficher les produits sur la page d'accueil
         { path: "", element: <HomePage /> },
-        { path: "/produits", element: <h1>Mes produits</h1> },
+        { path: "/produits", element: <ProductPage/> },
         { path: "/produits/:id", element: <ProductDetails /> },
       ],
     },

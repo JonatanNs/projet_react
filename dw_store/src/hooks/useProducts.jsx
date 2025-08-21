@@ -17,15 +17,13 @@ export const useProducts = () => {
 
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(null);
-
   const [loading, setLoading] = useState(false);
 
   const getProducts = () => {
     setLoading(true);
     setError(null);
 
-    return api
-      .get()
+    return api.get()
       .then((resp) => {
         setProducts(resp.data);
         return resp;
@@ -40,8 +38,7 @@ export const useProducts = () => {
   const getById = (id) => {
     setLoading(true);
 
-    return api
-      .get(`/${id}`)
+    return api.get(`/${id}`)
       .then((resp) => resp)
       .catch((err) => {
         setError(err);
@@ -50,5 +47,19 @@ export const useProducts = () => {
       .finally(() => setLoading(false));
   };
 
-  return { getProducts, products, error, loading, getById };
+  const getPaginate = (pageIdx = 1, perPage = 10) =>{
+    const url = `/?_page=${pageIdx}&_per_page=${perPage}`;
+    return api.get(url)
+      .then((resp) => {
+        setProducts(resp.data);
+        return resp;
+      })
+      .catch((err) => {
+        setError(err);
+        throw err;
+      })
+      .finally(() => setLoading(false));
+  };
+
+  return { getProducts, products, error, loading, getById, getPaginate };
 };

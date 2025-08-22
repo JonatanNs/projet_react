@@ -1,8 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment } from "../redux/slices/counterSlice";
+import { decrement, increment } from "../features/counterSlice";
  
 export const ReduxCpt = () => {
-  const count = useSelector((state) => state.count.value);
+  const count = useSelector((state) => state.counter.value);
+
   const dispatch = useDispatch();
  
   const incrementCount = () => {

@@ -12,6 +12,9 @@ export const NavBar = () => {
             <li>
                 <HeaderItem href="/produits">Produits</HeaderItem>
             </li>
+            <li>
+                <HeaderItem href="/cart">Panier Redux</HeaderItem>
+            </li>
           </ul>
         </div>
       </nav>

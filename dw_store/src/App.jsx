@@ -4,6 +4,7 @@ import { NavBar } from './components/NavBar';
 import { HomePage } from './pages/HomePage';
 import { ProductDetails } from './pages/ProductDetails';
 import { ProductPage } from './pages/ProductPage';
+import { CartPage } from './pages/CartPage';
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
         { path: "", element: <HomePage /> },
         { path: "/produits", element: <ProductPage/> },
         { path: "/produits/:id", element: <ProductDetails /> },
+        { path: "/cart", element: <CartPage/>},
       ],
     },
   ]);

@@ -2,9 +2,13 @@ import { useEffect, useState } from "react";
 import { useProducts } from "../hooks/useProducts";
 import { MyTable } from "../components/MyTable";
 import { ProductsListWithPaginationButtons } from "../components/ProductsListWithPaginationButtons";
+import { useSelector } from "react-redux";
 
 export const ProductPage = () => {
+
+    const count = useSelector((state) => state.counter.value);
     const {getPaginate, products, loading, error} = useProducts();
+
 
     const [responseApi, setResponseApi] = useState({
         "first": 1,

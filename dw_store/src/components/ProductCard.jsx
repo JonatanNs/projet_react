@@ -1,4 +1,6 @@
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { addToCart } from "../features/cartSlice";
 
 export const ProductCard = ({ product }) => {
   const navigate = useNavigate();
@@ -6,6 +8,12 @@ export const ProductCard = ({ product }) => {
   const handleShowDetail = () => {
     navigate(`produits/${product.id}`);
   };
+
+  const dispatch = useDispatch();
+
+  const handleAddToCart = () =>{
+    dispatch(addToCart(product));
+  }
 
   return (
     <div className="flex shadow-xl card bg-base-100 w-96">
@@ -28,6 +36,9 @@ export const ProductCard = ({ product }) => {
           <button onClick={handleShowDetail} className="btn btn-primary">
             Voir
           </button>
+        </div>
+        <div>
+          <button onClick={handleAddToCart} className="btn">Ajouter au panier</button>
         </div>
       </div>
     </div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { MyModal } from "./MyModal";
+import PropTypes from "prop-types";
 
 export const MyTable = ({ data = [], update = null, deletefct = null }) => {
   // Attention, pour que notre tableau fonctionne,
@@ -57,3 +58,12 @@ export const MyTable = ({ data = [], update = null, deletefct = null }) => {
     </>
   );
 };
+
+MyTable.protoTypes = {
+  data: PropTypes.array.isRequired,
+  // update : PropTypes.object
+  update : PropTypes.shape({
+    fct: PropTypes.func,
+    form: PropTypes.func,
+  })
+}

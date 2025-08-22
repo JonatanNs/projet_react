@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage';
 import { ProductDetails } from './pages/ProductDetails';
 import { ProductPage } from './pages/ProductPage';
 import { CartPage } from './pages/CartPage';
+import { LoginPage } from './pages/LoginPage';
 
 function App() {
   
@@ -18,6 +19,7 @@ function App() {
         { path: "/produits", element: <ProductPage/> },
         { path: "/produits/:id", element: <ProductDetails /> },
         { path: "/cart", element: <CartPage/>},
+        { path: "/connexion", element: <LoginPage/>},
       ],
     },
   ]);

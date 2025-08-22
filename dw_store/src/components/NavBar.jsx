@@ -15,6 +15,9 @@ export const NavBar = () => {
             <li>
                 <HeaderItem href="/cart">Panier Redux</HeaderItem>
             </li>
+            <li>
+                <HeaderItem href="/connexion">Connexion</HeaderItem>
+            </li>
           </ul>
         </div>
       </nav>

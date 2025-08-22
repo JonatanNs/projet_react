@@ -20,6 +20,9 @@ export const HomePage = () => {
   return (
     <>
       <h1>Accueil</h1>
+
+      <h2>Notre compteur redux</h2>
+
       <h2>Nos produits</h2>
 
       <div className="grid grid-cols-4 gap-4">
